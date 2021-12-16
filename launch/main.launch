@@ -1,0 +1,9 @@
+<launch>
+  <rosparam command="load" file="$(find simple_ros_consensus)/params/config.yaml" param="consensus_params"/>
+
+  <node pkg="simple_ros_consensus" type="node.py" ns="rpi0" name="node" output="screen"/>
+  <node pkg="simple_ros_consensus" type="node.py" ns="rpi1" name="node" output="screen"/>
+  <node pkg="simple_ros_consensus" type="node.py" ns="rpi2" name="node" output="screen"/>
+  <node pkg="simple_ros_consensus" type="node.py" ns="rpi3" name="node" output="screen"/>
+  <node pkg="simple_ros_consensus" type="node.py" ns="rpi4" name="node" output="screen"/>
+</launch>
