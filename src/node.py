@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import random
@@ -7,6 +7,9 @@ import rospy
 from std_msgs.msg import Float32
 from std_srvs.srv import Empty, EmptyResponse
 from simple_ros_consensus.srv import SetValue, SetValueResponse
+
+from rpi_ws281x_pylib import LEDClient
+
 
 class SimpleConsensusNode(object):
     def __init__(self):
@@ -19,6 +22,11 @@ class SimpleConsensusNode(object):
         self.fix_until = rospy.get_time()
         self.value = None
         self.set_random()
+
+        # Value visualization with LEDs
+        self.leds = LEDClient()
+        self.leds.connect()
+        self.leds.set_all((int(self.value / 360 * 255), 255, 20), color_space='hsv')
 
         # Create a publisher.
         pub = rospy.Publisher('value', Float32, queue_size=1)
@@ -36,6 +44,7 @@ class SimpleConsensusNode(object):
         rate = rospy.Rate(10)
         while not rospy.is_shutdown():
             pub.publish(self.value)
+            self.leds.set_all((int(self.value / 360 * 255), 255, 20), color_space='hsv')
             rate.sleep()
 
     def callback(self, msg):
