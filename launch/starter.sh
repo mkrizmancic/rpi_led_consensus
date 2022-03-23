@@ -13,6 +13,6 @@ killall() {
 
 sudo LED_server &
 sleep 2
-ROS_NAMESPACE="$HOSTNAME" rosrun simple_ros_consensus node.py &
+ROS_NAMESPACE="$HOSTNAME" rosrun rpi_led_consensus node.py &
 
 cat
