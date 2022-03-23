@@ -48,22 +48,22 @@ windows:
       panes:
         - rpi0:
             - ssh pi@rpi0.local
-            - cd catkin_ws/src/simple_ros_consensus/launch
+            - cd catkin_ws/src/rpi_led_consensus/launch
             - clear
             - waitForRos; bash starter.sh
         - rpi1:
             - ssh pi@rpi1.local
-            - cd catkin_ws/src/simple_ros_consensus/launch
+            - cd catkin_ws/src/rpi_led_consensus/launch
             - clear
             - waitForRos; bash starter.sh
         - rpi2:
             - ssh pi@rpi2.local
-            - cd catkin_ws/src/simple_ros_consensus/launch
+            - cd catkin_ws/src/rpi_led_consensus/launch
             - clear
             - waitForRos; bash starter.sh
         - rpi3:
             - ssh pi@rpi3.local
-            - cd catkin_ws/src/simple_ros_consensus/launch
+            - cd catkin_ws/src/rpi_led_consensus/launch
             - clear
             - waitForRos; bash starter.sh
   - Local:
