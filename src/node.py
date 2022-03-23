@@ -6,7 +6,7 @@ import random
 import rospy
 from std_msgs.msg import Float32
 from std_srvs.srv import Empty, EmptyResponse
-from simple_ros_consensus.srv import SetValue, SetValueResponse
+from rpi_led_consensus.srv import SetValue, SetValueResponse
 
 from rpi_ws281x_pylib import LEDClient
 
@@ -20,7 +20,7 @@ class SimpleConsensusNode(object):
         index = int(self.config['mapping'].index(name))
         self.alpha = self.config['alpha']
         self.fix_until = rospy.get_time()
-        self.value = None
+        self.value = 0
         self.set_random()
 
         # Value visualization with LEDs

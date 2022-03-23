@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>simple_ros_consensus</name>
+  <name>rpi_led_consensus</name>
   <version>0.0.1</version>
-  <description>The simple_ros_consensus package</description>
+  <description>The rpi_led_consensus package</description>
 
   <maintainer email="marko.krizmancic@fer.hr">Marko Krizmancic</maintainer>
 
